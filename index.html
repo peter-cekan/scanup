@@ -6,7 +6,7 @@
         <link rel="icon" type="image/x-icon" href="favicon.ico">
         <style>
             img{
-                border-radius: 20%;
+                border-radius: 20px;
                 transition: 0.3s;
             }
             button{
@@ -29,7 +29,10 @@
                 position: relative;
                 top: -5px;
                 left: -5px;
+                transform: rotate(1deg);
             }
+            
+
         </style>
     </head>
 
@@ -54,7 +57,8 @@
         </br>
 
         <div style="text-align: center;">
-            <img src="logo-scanup.png"width="30%" height="27%">
+            <img src="logo-scanup.png"width="30%" height="27%"; style="box-shadow: 0px 0px 0px hsl(45, 54%, 15%); hover: position: 
+            absolute; top: 0px; left: 0px;">
         </div>
 
         <h1 style="text-align: center; color: #ffffff">
@@ -148,6 +152,36 @@
         <p style="text-align: center; color: white;">
             Page mise à jour le <span style="color: #D4AF37">16/06/25</span>
         </p>
+
+
+
+
+
+
+        <script>
+  let currentScroll = window.scrollY;
+  let targetScroll = currentScroll;
+  let isScrolling = false;
+
+  window.addEventListener('wheel', (e) => {
+    targetScroll += e.deltaY;
+    if (!isScrolling) {
+      requestAnimationFrame(smoothScroll);
+      isScrolling = true;
+    }
+  }, { passive: false });
+
+  function smoothScroll() {
+    currentScroll += (targetScroll - currentScroll) * 0.1;
+    window.scrollTo(0, currentScroll);
+    if (Math.abs(targetScroll - currentScroll) > 0.5) {
+      requestAnimationFrame(smoothScroll);
+    } else {
+      isScrolling = false;
+    }
+  }
+</script>
+
 
     </body>
 
