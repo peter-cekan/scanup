@@ -1,0 +1,160 @@
+<html>
+    <head>
+
+    <title>
+        Choix du bracelet
+    </title>
+    <style>
+        body{
+            background-color: hsl(45, 54%, 15%);
+            margin: 60px;
+        }
+        h1{
+            color: #d4af37;
+            text-align: center;
+            font-size: 50px;
+        }
+        button{
+            height: 70px;
+            width: 140px;
+            background-color: #d4af37;
+            color: #114e87;
+            font-size: 25px;
+            margin: 5px;
+            border-radius: 6px;
+                border: none;
+                cursor: pointer;
+                transition: 0.3s;
+        background: linear-gradient(to left, rgb(241, 171, 50), rgb(212, 175, 55));
+        }
+        
+        button:hover{
+                 background: linear-gradient(to left, rgb(212, 175, 55), rgb(241, 171, 50));
+                 position: relative;
+                 height: 75px;
+                 width: 145px;
+                left: -5px;
+                top: -5px;
+                box-shadow: 4px 4px 10px ;
+            }
+            div{
+            text-align: center;
+        }
+        img{
+                border-radius: 30px;
+                margin: 5px;
+                transition: 0.3s;
+                }
+        img:hover{
+                border-radius: 20px;
+                position: relative;
+                left: -5px;
+                top: -5px;
+                box-shadow: 4px 4px 10px rgb(241, 171, 50);
+            }
+    </style>
+
+    </head>
+    <body>
+        <a href="bracelets.html">
+            <button style="height: 50px; width: 100px">
+                Retour
+            </button>
+        </a>
+    <h1>
+    Choisi(e) la couleur de ton bracelet:
+    </h1>
+    <div>
+        <img src="agatenoir.png" width="10%;">
+        </img>
+
+        <img src="agatenoir.png" width="10%;">
+        </img>
+
+        <img src="agatenoir.png" width="10%;">
+        </img>
+
+        <img src="agatenoir.png" width="10%;">
+        </img>
+
+        <img src="agatenoir.png" width="10%;">
+        </img>
+
+        <img src="agatenoir.png" width="10%;">
+        </img>
+
+        <img src="agatenoir.png" width="10%;">
+        </img>
+
+        <img src="agatenoir.png" width="10%;">
+        </img>
+
+        <img src="agatenoir.png" width="10%;">
+        </img>
+
+        <img src="agatenoir.png" width="10%;">
+        </img>
+
+        <img src="agatenoir.png" width="10%;">
+        </img>
+
+        <img src="agatenoir.png" width="10%;">
+        </img>
+
+        <img src="agatenoir.png" width="10%;">
+        </img>
+
+        <img src="agatenoir.png" width="10%;">
+        </img>
+
+        <img src="agatenoir.png" width="10%;">
+        </img>
+
+        <img src="agatenoir.png" width="10%;">
+        </img>
+
+        <img src="agatenoir.png" width="10%;">
+        </img>
+
+        <img src="agatenoir.png" width="10%;">
+        </img>
+
+        <img src="agatenoir.png" width="10%;">
+        </img>
+
+        <img src="agatenoir.png" width="10%;">
+        </img>
+
+        <img src="agatenoir.png" width="10%;">
+        </img>
+
+        <img src="agatenoir.png" width="10%;">
+        </img>
+    </div>
+
+
+    <script>
+  let currentScroll = window.scrollY;
+  let targetScroll = currentScroll;
+  let isScrolling = false;
+
+  window.addEventListener('wheel', (e) => {
+    targetScroll += e.deltaY;
+    if (!isScrolling) {
+      requestAnimationFrame(smoothScroll);
+      isScrolling = true;
+    }
+  }, { passive: false });
+
+  function smoothScroll() {
+    currentScroll += (targetScroll - currentScroll) * 0.1;
+    window.scrollTo(0, currentScroll);
+    if (Math.abs(targetScroll - currentScroll) > 0.5) {
+      requestAnimationFrame(smoothScroll);
+    } else {
+      isScrolling = false;
+    }
+  }
+</script>
+    </body>
+</html>
