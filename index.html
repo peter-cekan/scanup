@@ -3,14 +3,17 @@
         <title>
             ScanUp Aceuil
         </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/x-icon" href="favicon.ico">
         <style>
             body{
-                background-color: white
+                background-color: hsl(45, 54%, 15%);
             }
             img{
                 border-radius: 20px;
-                transition: 0.3s;
+                position: relative;
+                transition: transform 0.3s ease;
+                transform: translateX(0px) translateY(0px);
                 }
             button{
                 border-radius: 6px;
@@ -28,19 +31,19 @@
             }
             img:hover{
                 border-radius: 10%;
-                position: relative;
-                top: -5px;
-                left: -5px;
                 filter: drop-shadow(7px 7px 13px);
+                transform: translateX(-6px) translateY(-6px);
             }
             p{
                 font-size: 16px;
             }
-
+            @media (max-width: 600px){
+                
+            }
         </style>
     </head>
 
-    <body style="background-color: hsl(45, 54%, 15%); margin-left: 20px; margin-right: 20px;">
+    <body style="margin-left: 20px; margin-right: 20px;">
         
         <a href="bracelets.html"><button class="degrade2" style="width: 95px; height: 50px;background-color: #d4af37; color: rgb(10, 35, 159); font-size: 20px;">
             Bracelets</button></a>
