@@ -32,7 +32,7 @@
             img:hover{
                 border-radius: 10%;
                 filter: drop-shadow(7px 7px 13px);
-                
+                transform: translateX(-5px) translateY(-5px);
             }
             p{
                 font-size: 16px;
@@ -49,7 +49,18 @@
             #b4{
                 width: 60px;
             }
-
+            #imgp{
+                width: 30%;
+                height: 27%;
+            }
+            #img2{
+                height: 300px;
+            }
+            #d1{
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
             @media (max-width: 600px){
                 #b1{
                     width: 100%;
@@ -70,6 +81,23 @@
                     width: 100%;
                     margin-bottom: 10px;
                     border-radius: 25px;
+                }
+                #imgp{
+                width: 98%;
+                height: 22%;
+                }
+                #img2{
+                height: 250px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: auto;
+                }
+                #d1{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: auto;
                 }
             }
         </style>
@@ -98,7 +126,7 @@
         </br>
 
         <div style="text-align: center;">
-            <img src="logo-scanup.png"width="30%" height="27%"; style="box-shadow: 0px 0px 0px hsl(45, 54%, 15%); position: 
+            <img src="logo-scanup.png"; id="imgp"; style="box-shadow: 0px 0px 0px hsl(45, 54%, 15%); position: 
             relative; top: 0px; left: 0px;">
         </div>
 
@@ -130,8 +158,8 @@
 
         
 
-        <div style="display: flex; justify-content: space-between; align-items: center;">
-            <img height="300px" src="carte.png">
+        <div  id="d1">
+            <img id="img2" src="carte.png">
             <p style="color: white;"> 
                 Poserder une carte, c'est faire un pas vers l'inovation, le style et la résponsabilité.
 
