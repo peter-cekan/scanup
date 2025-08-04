@@ -1,0 +1,77 @@
+<html>
+<head>
+<title>Choix Cilyndre</title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<style>
+    button{
+            height: 35px;
+            width: 90px;
+            color: #114e87;
+            font-size: 20px;
+            margin: 5px;
+            border-radius: 6px;
+                border: none;
+                cursor: pointer;
+        }
+        .degrade2{
+                background: linear-gradient(to left, #e2a026, #d4af37)
+            }
+            img{
+                background-color: white;
+                height: 110px;
+                width: 170;
+                border-radius: 10px;
+                margin: 5px;
+                transition: 0.3s;
+            }
+            button:hover{
+                 background: linear-gradient(to left, rgb(212, 175, 55), rgb(241, 171, 50))
+            }
+            img:hover{
+                border-radius: 20px;
+                position: relative;
+                left: -5px;
+                top: -5px;
+                box-shadow: 6px 6px 10px;
+            }
+</style>
+    </head>
+    <body style="background-color: hsl(45, 54%, 15%); margin-left: 20px; margin-right: 20px;">
+        <a href="XXX.html"><button class="degrade2" style="width: 70px; height: 40px">Aceuil</button></a>
+
+        <img scr="?????????";>
+        </img>
+
+
+
+
+
+
+
+
+                <script>
+  let currentScroll = window.scrollY;
+  let targetScroll = currentScroll;
+  let isScrolling = false;
+
+  window.addEventListener('wheel', (e) => {
+    targetScroll += e.deltaY;
+    if (!isScrolling) {
+      requestAnimationFrame(smoothScroll);
+      isScrolling = true;
+    }
+  }, { passive: false });
+
+  function smoothScroll() {
+    currentScroll += (targetScroll - currentScroll) * 0.1;
+    window.scrollTo(0, currentScroll);
+    if (Math.abs(targetScroll - currentScroll) > 0.5) {
+      requestAnimationFrame(smoothScroll);
+    } else {
+      isScrolling = false;
+    }
+  }
+</script>
+            </body>
+                
+</html>
