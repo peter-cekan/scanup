@@ -1,0 +1,94 @@
+<html>
+<head>
+<title><Code></title>
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<style>
+    button{
+            height: 35px;
+            width: 90px;
+            color: #114e87;
+            font-size: 20px;
+            margin: 5px;
+            border-radius: 6px;
+                border: none;
+                cursor: pointer;
+        }
+        .degrade2{
+                background: linear-gradient(to left, #e2a026, #d4af37)
+            }
+            img{
+                background-color: white;
+                height: 110px;
+                width: 170;
+                border-radius: 10px;
+                margin: 5px;
+                transition: 0.3s;
+            }
+            button:hover{
+                 background: linear-gradient(to left, rgb(212, 175, 55), rgb(241, 171, 50))
+            }
+            img:hover{
+                border-radius: 20px;
+                position: relative;
+                left: -5px;
+                top: -5px;
+                box-shadow: 6px 6px 10px;
+            }
+            div{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            p{
+                text-align: center;
+                color: white;
+            }
+            h1{
+                text-align: center;
+                color: white;
+            }
+</style>
+    </head>
+    <body style="background-color: hsl(45, 54%, 15%); margin-left: 20px; margin-right: 20px;">
+        <a href="choixcilyndre.html"><button class="degrade2" style="width: 70px; height: 40px">Aceuil</button></a>
+        <p>
+            Pour commander ton bracelet, envoie un E-mail à XXX avec le code ci dessous insi que ton nom, prénom, classe.
+             et une foto clair de ta carte de cantine.
+        </p>
+        <div>
+            <h1>
+                VARIABLE
+            </h1>
+        </div>
+
+
+
+
+
+
+                <script>
+  let currentScroll = window.scrollY;
+  let targetScroll = currentScroll;
+  let isScrolling = false;
+
+  window.addEventListener('wheel', (e) => {
+    targetScroll += e.deltaY;
+    if (!isScrolling) {
+      requestAnimationFrame(smoothScroll);
+      isScrolling = true;
+    }
+  }, { passive: false });
+
+  function smoothScroll() {
+    currentScroll += (targetScroll - currentScroll) * 0.1;
+    window.scrollTo(0, currentScroll);
+    if (Math.abs(targetScroll - currentScroll) > 0.5) {
+      requestAnimationFrame(smoothScroll);
+    } else {
+      isScrolling = false;
+    }
+  }
+</script>
+            </body>
+                
+</html>
