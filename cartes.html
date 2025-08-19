@@ -17,9 +17,11 @@
                 background: linear-gradient(to left, #e2a026, #d4af37)
             }
             img{
+                position: relative;
                 border-radius: 30px;
                 margin: 5px;
-                transition: 0.3s;
+                transition: transform 0.3s ease;
+                transform: translateX(0px) translateY(0px);
             }
             button:hover{
                  background: linear-gradient(to left, rgb(212, 175, 55), rgb(241, 171, 50))
@@ -27,9 +29,8 @@
             img:hover{
                 border-radius: 20px;
                 position: relative;
-                left: -5px;
-                top: -5px;
                 box-shadow: 6px 6px 10px;
+                transform: translateX(-5px) translateY(-5px);
             }
 </style>
     </head>
