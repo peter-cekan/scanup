@@ -1,224 +1,236 @@
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8"/>
-        <title>
-            ScanUp Aceuil
-        </title>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="icon" type="image/x-icon" href="favicon.ico">
-        <style>
-            body{
-                background-color: #3b3112;
+
+<head>
+    <meta charset="utf-8" />
+    <title>
+        ScanUp Aceuil
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+        body {
+            background-color: #3b3112;
+        }
+
+        img {
+            border-radius: 20px;
+            position: relative;
+            transition: transform 0.3s ease;
+            transform: translateX(0px) translateY(0px);
+        }
+
+        button {
+            border-radius: 6px;
+            border: none;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: linear-gradient(to left, rgb(212, 175, 55), rgb(241, 171, 50));
+        }
+
+        .degrade {
+            background: linear-gradient(to left, rgb(241, 171, 50), rgb(212, 175, 55));
+        }
+
+        .degrade2 {
+            background: linear-gradient(to left, #e2b626, #d4af37);
+        }
+
+        img:hover {
+            border-radius: 10%;
+            filter: drop-shadow(7px 7px 13px);
+            transform: translateX(-5px) translateY(-5px);
+        }
+
+        p {
+            font-size: 16px;
+        }
+
+        #b1 {
+            width: 95px;
+        }
+
+        #b2 {
+            width: 125px;
+        }
+
+        #b3 {
+            width: 80px;
+        }
+
+        #b4 {
+            width: 60px;
+        }
+
+        #imgp {
+            width: 30%;
+            height: 27%;
+        }
+
+        #img2 {
+            height: 300px;
+        }
+
+        .cool-div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        @media (max-width: 600px) {
+            #b1, #b2, #b3, #b4 {
+                width: 100%;
+                margin-bottom: 10px;
+                border-radius: 25px;
             }
-            img{
-                border-radius: 20px;
-                position: relative;
-                transition: transform 0.3s ease;
-                transform: translateX(0px) translateY(0px);
-                }
-            button{
-                border-radius: 6px;
-                border: none;
-                cursor: pointer;
-            }
-            button:hover{
-                background: linear-gradient(to left, rgb(212, 175, 55), rgb(241, 171, 50));
-            }
-            .degrade{
-                background: linear-gradient(to left, rgb(241, 171, 50), rgb(212, 175, 55));
-            }
-            .degrade2{
-                background: linear-gradient(to left, #e2b626, #d4af37);
-            }
-            img:hover{
-                border-radius: 10%;
-                filter: drop-shadow(7px 7px 13px);
-                transform: translateX(-5px) translateY(-5px);
-            }
-            p{
-                font-size: 16px;
-            }
-            #b1{
-                width: 95px;
-            }
-            #b2{
-                width: 125px;
-            }
-            #b3{
-                width: 80px;
-            }
-            #b4{
-                width: 60px;
-            }
-            #imgp{
-                width: 30%;
-                height: 27%;
-            }
-            #img2{
-                height: 300px;
-            }
-            #d1{
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-            }
-            @media (max-width: 600px){
-                #b1{
-                    width: 100%;
-                    margin-bottom: 10px;
-                    border-radius: 25px;
-                }
-                #b2{
-                    width: 100%;
-                    margin-bottom: 10px;
-                    border-radius: 25px;
-                }
-                #b3{
-                    width: 100%;
-                    margin-bottom: 10px;
-                    border-radius: 25px;
-                }
-                #b4{
-                    width: 100%;
-                    margin-bottom: 10px;
-                    border-radius: 25px;
-                }
-                #imgp{
+
+            #imgp {
                 width: 98%;
                 height: 22%;
-                }
-                #img2{
+            }
+
+            #img2 {
                 height: 250px;
                 display: flex;
                 justify-content: center;
                 align-items: center;
                 margin: auto;
-                }
-                #d1{
-                    display: block;
-                }
-                div{
-                    justify-content: none;
-                    
-                    align-items: normal;
-                    text-align: normal;
-                }
-                #d2{
-                    display: block;
-                }
-                p{
-                    margin-bottom: 30px;
-                }
-                #d3{
-                    display: block;
-                }
             }
-        </style>
-    </head>
 
-    <body style="margin-left: 20px; margin-right: 20px;">
-        
-        <a href="bracelets.html"><button class="degrade2"; id="b1", style="height: 50px;background-color: #d4af37; color: rgb(10, 35, 159); font-size: 20px;">
+            .cool-div {
+                display: block;
+            }
+
+            div {
+                justify-content: none;
+
+                align-items: normal;
+                text-align: normal;
+            }
+            p {
+                margin-bottom: 30px;
+            }
+
+        }
+    </style>
+</head>
+
+<body style="margin-left: 20px; margin-right: 20px;">
+
+    <a href="bracelets.html"><button class="degrade2" id="b1"
+            style="height: 50px;background-color: #d4af37; color: rgb(10, 35, 159); font-size: 20px;">
             Bracelets</button></a>
 
-            <!--
+    <!--
         <a href="coliers.html"><button class="degrade2" style="width: 80px; height: 50px; background-color: #D4AF37; color: rgb(10, 35, 159); font-size: 20px;">
             Les Coliers</button></a>
         -->
 
-        <a href="portes-clefs.html"><button class="degrade2"; id="b2", style="height:50px; background-color: #D4AF37; color: rgb(10, 35, 159); font-size: 20px;">
+    <a href="portes-clefs.html"><button class="degrade2" id="b2"
+            style="height:50px; background-color: #D4AF37; color: rgb(10, 35, 159); font-size: 20px;">
             Portes Clefs</button></a>
 
-        <a href="cartes.html"><button class="degrade2"; id="b3", style="height: 50px; background-color: #D4AF37; color: rgb(10, 35, 159); font-size: 20px;">
-          Cartes</button></a>
+    <a href="cartes.html"><button class="degrade2" ; id="b3" ,
+            style="height: 50px; background-color: #D4AF37; color: rgb(10, 35, 159); font-size: 20px;">
+            Cartes</button></a>
 
-        <a href="FAQ.html"><button class="degrade2": id="b4"; style="height: 50px; background-color: #d4af37; color: rgb(10, 35, 159); font-size: 20px;">
+    <a href="FAQ.html"><button class="degrade2" : id="b4" ;
+            style="height: 50px; background-color: #d4af37; color: rgb(10, 35, 159); font-size: 20px;">
             FAQ</button></a>
-            
-        </br>
-        </br>
 
-        <div style="text-align: center;">
-            <img src="logo-scanup.png"; id="imgp"; style="box-shadow: 0px 0px 0px hsl(45, 54%, 15%); position: 
+    <br/>
+    <br/>
+
+    <div style="text-align: center;">
+        <img src="logo-scanup.png" ; id="imgp" ; style="box-shadow: 0px 0px 0px hsl(45, 54%, 15%); position: 
             relative; top: 0px; left: 0px;">
-        </div>
+    </div>
 
-        <h1 style="text-align: center; color: #ffffff">
-            Avec ton code, Scan ton Style !
-        </h1>
+    <h1 style="text-align: center; color: #ffffff">
+        Avec ton code, Scan ton Style !
+    </h1>
 
-        <p style="color: #ffffff; max-width: 420px; margin: auto; text-align: center">
-            <b>J’en avais marre.</b>
-        </br>
+    <p style="color: #ffffff; max-width: 420px; margin: auto; text-align: center">
+        <b>J’en avais marre.</b>
+        <br/>
 
-            Marre d’oublier ma carte de cantine, de manger en dernier, de me faire coller, ou même de devoir en racheter une à un 
-            prix abusé.
-        </br>
-        </br>
+        Marre d’oublier ma carte de cantine, de manger en dernier, de me faire coller, ou même de devoir en racheter une
+        à un
+        prix abusé.
+        <br/>
+        <br/>
+    </p>
+    <p style="color: #ffffff; max-width: 620px; margin: auto; text-align: center">
+        <b>C’est là qu'on a eu une idée.</b>
+        <br/>
+        Pourquoi ne pas créer un <b>accessoire stylé</b>, utile, qu’on ne perd pas, qu’on adore porter, et qui montre
+        qu’on vit dans
+        un monde <b>d’innovation et de précision</b> ?
+        <br/>
+        C’est comme ça qu’est née <b>ScanUp</b>.
+
+
+        <br/>
+
+    </p>
+
+
+
+    <div class="cool-div">
+        <img id="img2" src="cartepro3.png">
+        <p style="color: white;" class="p">
+            Poserder une carte, c'est faire un pas vers l'inovation, le style et la résponsabilité.
+
         </p>
-        <p style="color: #ffffff; max-width: 620px; margin: auto; text-align: center">
-            <b>C’est là qu'on a eu une idée.</b>
-        </br>
-            Pourquoi ne pas créer un <b>accessoire stylé</b>, utile, qu’on ne perd pas, qu’on adore porter, et qui montre qu’on vit dans 
-            un monde <b>d’innovation et de précision</b> ?
-        </br>
-            C’est comme ça qu’est née <b>ScanUp</b>.
 
-
-            </br>
-            
-        </p>
-
-        
-
-        <div  id="d1">
-            <img id="img2" src="cartepro3.png">
-            <p style="color: white;" class="p"> 
-                Poserder une carte, c'est faire un pas vers l'inovation, le style et la résponsabilité.
-
-            </p>
-            
-        </div> 
-        <div style="margin: 10px">
-            <a href="cartes.html">
-            <button class="degrade" style="background-color: D4AF37; width: 100px; height: 35px; font-size: 15px">Découvrir
+    </div>
+    <div style="margin: 10px">
+        <a href="cartes.html">
+            <button class="degrade"
+                style="background-color: D4AF37; width: 100px; height: 35px; font-size: 15px">Découvrir
             </button>
-            </a>
-        </div>
+        </a>
+    </div>
 
 
-        <div id="d2">   
+    <div class="cool-div">
 
-            <p style="color: white; margin-left: 10px;">
-                Petit, discrét, passe partout, un petit accesoir qui en donne du pouvoir.
-            </p>
-            </br>
-            <img height="300px" src="porte-clef.png">
-        </div>
+        <p style="color: white; margin-left: 10px;">
+            Petit, discrét, passe partout, un petit accesoir qui en donne du pouvoir.
+        </p>
+        <br/>
+        <img height="300px" src="porte-clef.png">
+    </div>
 
-        <div style="margin-top: 10px; text-align: right">
-                <a href="portes-clefs.html">
-                    <button style="background-color: rgba(128, 128, 128, 0.39); width: 100px; height: 35px; font-size: 15px;">Découvrir
-                    </button>
-                </a>
+    <div style="margin-top: 10px; text-align: right">
+        <a href="portes-clefs.html">
+            <button
+                style="background-color: rgba(128, 128, 128, 0.39); width: 100px; height: 35px; font-size: 15px;">Découvrir
+            </button>
+        </a>
+
+    </div>
+
+    <div class="cool-div">
+        <img height="300px" src="test.jpg">
+        <br />
+        <p style="color: white; text-align: right; margin: 10px;">
+            Perdre sa carte, manger en dernier, se faire coller, c'est du passée avec un accesoir qui ne t'oublie
+            jamais et qui en
+            évite des problemmes !
+        </p>
+    </div>
+    <div style="text-align: left; margin-top: 10px;">
+        <a href="bracelets.html">
+            <button class="degrade"
+                style="background-color: #D4AF37; width: 100px; height: 35px; font-size: 15px;">Découvrir</button>
+        </a>
+    </div>
 
 
-        <div id="d3">
-            <img height="300px" src="test.jpg">
-            <br/>
-            <p style="color: white; text-align: right; margin: 10px;">
-                Perdre sa carte, manger en dernier, se faire coller, c'est du passée avec un accesoir qui ne t'oublie jamais et qui en
-                 évite des problemmes !
-            </p>
-        </div>
-        <div style="text-align: left; margin-top: 10px;">
-            <a href="bracelets.html">
-                <button class="degrade" style="background-color: #D4AF37; width: 100px; height: 35px; font-size: 15px;">Découvrir</button>
-            </a>
-        </div>
-        
-        
-            <!---
+    <!---
         </div>
         <div style="display: flex; justify-content: space-between; align-items: center;">
             <p style="color: white;">
@@ -236,49 +248,49 @@
         </div>
     -->
     <h2 style="color: white; text-align: center">C'est quoi Scan<span style="color: #D4AF37">Up</span> ?</h2>
-        <p style="color: white; text-align: center; font-size: 20px">
-             <b>Notre mission ?</b>
-            </br>
-            Offrir à chaque élève et professeur un accessoire qui <b>fait gagner du temps</b>,
-            </br>
-            mais surtout qui <b>révèle un certain état d’esprit</b>:
-            </br>
-            celui de ceux qui aiment l’efficacité, le style, et l’innovation.
-        </p>    
-        </br>
-        <hr style="color: #D4AF37"/>
+    <p style="color: white; text-align: center; font-size: 20px">
+        <b>Notre mission ?</b>
+        <br/>
+        Offrir à chaque élève et professeur un accessoire qui <b>fait gagner du temps</b>,
+        <br/>
+        mais surtout qui <b>révèle un certain état d’esprit</b>:
+        <br/>
+        celui de ceux qui aiment l’efficacité, le style, et l’innovation.
+    </p>
+    <br/>
+    <hr style="color: #D4AF37" />
 
-        <p style="text-align: center; color: white;">
-            Mis à jour le <span style="color: #D4AF37">27/07/25</span>
-        </p>
-
-
+    <p style="text-align: center; color: white;">
+        Mis à jour le <span style="color: #D4AF37">27/07/25</span>
+    </p>
 
 
-        <script>
-  let currentScroll = window.scrollY;
-  let targetScroll = currentScroll;
-  let isScrolling = false;
 
-  window.addEventListener('wheel', (e) => {
-    targetScroll += e.deltaY;
-    if (!isScrolling) {
-      requestAnimationFrame(smoothScroll);
-      isScrolling = true;
-    }
-  }, { passive: false });
 
-  function smoothScroll() {
-    currentScroll += (targetScroll - currentScroll) * 0.1;
-    window.scrollTo(0, currentScroll);
-    if (Math.abs(targetScroll - currentScroll) > 0.5) {
-      requestAnimationFrame(smoothScroll);
-    } else {
-      isScrolling = false;
-    }
-  }
-</script>
+    <script>
+        let currentScroll = window.scrollY;
+        let targetScroll = currentScroll;
+        let isScrolling = false;
 
-    </body>
+        window.addEventListener('wheel', (e) => {
+            targetScroll += e.deltaY;
+            if (!isScrolling) {
+                requestAnimationFrame(smoothScroll);
+                isScrolling = true;
+            }
+        }, { passive: false });
+
+        function smoothScroll() {
+            currentScroll += (targetScroll - currentScroll) * 0.1;
+            window.scrollTo(0, currentScroll);
+            if (Math.abs(targetScroll - currentScroll) > 0.5) {
+                requestAnimationFrame(smoothScroll);
+            } else {
+                isScrolling = false;
+            }
+        }
+    </script>
+
+</body>
 
 </html>
