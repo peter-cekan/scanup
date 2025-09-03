@@ -1,19 +1,22 @@
 <html>
-    <head>
+
+<head>
 
     <title>
-        Choix du bracelet
+        Choix de la carte
     </title>
     <style>
-        body{
+        body {
             background-color: hsl(45, 54%, 15%);
         }
-        h1{
+
+        h1 {
             color: #d4af37;
             text-align: center;
             font-size: 50px;
         }
-        button{
+
+        button {
             height: 50px;
             width: 100px;
             background-color: #d4af37;
@@ -21,82 +24,104 @@
             font-size: 25px;
             margin: 5px;
             border-radius: 6px;
-                border: none;
-                cursor: pointer;
+            border: none;
+            cursor: pointer;
         }
-        p{
+
+        p {
             font-size: 20px;
             text-align: left;
         }
-        .degrade{
-                background: linear-gradient(to left, rgb(241, 171, 50), rgb(212, 175, 55))
-            }
-            button:hover{
-                 background: linear-gradient(to left, rgb(212, 175, 55), rgb(241, 171, 50))
-            }
+
+        .degrade {
+            background: linear-gradient(to left, rgb(241, 171, 50), rgb(212, 175, 55))
+        }
+
+        button:hover {
+            background: linear-gradient(to left, rgb(212, 175, 55), rgb(241, 171, 50))
+        }
+
+        * {
+            font-family: sans-serif;
+        }
+        #text{
+            max-width: 900px;
+            margin: auto;
+        }
     </style>
 
-    </head>
-    <body>
-        <a href="cartes.html">
-            <button class="degrade">
-                Retour
-            </button>
-        </a>
+</head>
+
+<body>
+    <a href="cartes.html">
+        <button class="degrade">
+            Retour
+        </button>
+    </a>
     <h1>
-    Nos Cartes
+        Nos Cartes
     </h1>
     <h2 style="color: white; text-align: center">
-                Comment me procurer une carte ?
-                </h2>
-                <br/>
-                <p style="color: rgb(255, 228, 74)">
+        Comment me procurer une carte ?
+    </h2>
+    <br />
+    <div id="text">
+        <p style="color: rgb(255, 228, 74)">
 
-                <b>1)</b> Commence par télécharger le fichier ci-dessous. <a href="Personalisationcarte-ScanUp.pptx"><img src="telecharger.png" width="40px"></a>
+            <b>1)</b> Commence par télécharger le fichier ci-dessous. <a href="Personalisationcarte-ScanUp.pptx"><img
+                    src="telecharger.png" width="40px"></a>
 
             </br>
-        </br>
+            </br>
 
-                <b>2)</b> Ouvre-le avec (exemple : PowerPoint, LibreOffice...) et place les motifs de ton choix sur le rectangle qui apparaît.
-                 <b>(avec un minimum de 0,5 mm de largeur pour les traits)</b>
-        </br>
-        </br>
+            <b>2)</b> Ouvre-le avec (exemple : PowerPoint, LibreOffice...) et place les motifs de ton choix sur le
+            rectangle qui apparaît.
+            <b>(avec un minimum de 0,5 mm de largeur pour les traits)</b>
+            </br>
+            </br>
 
-        <b>3)</b> Envoie-nous le fichier par <b>E-mail</b> à l'adresse <b><a href="mailto:scanup.cantine@gmail.com" target="_blank" style="color:#ffe70b">scanup.cantine@gmail.com</a></b> avec : <b>Ton nom</b>, <b>Ton Prénom</b>, 
-        <b>Ta classe (exemple : 3e B), avec le fichier que tu as personnalisé</b>, et <b>Une photo claire de ton ancienne carte de cantine</b>
+            <b>3)</b> Envoie-nous le fichier par <b>E-mail</b> à l'adresse <b><a href="mailto:scanup.cantine@gmail.com"
+                    target="_blank" style="color:#ffe70b">scanup.cantine@gmail.com</a></b> avec : <b>Ton nom</b>, <b>Ton
+                Prénom</b>,
+            <b>Ta classe (exemple : 3e B), avec le fichier que tu as personnalisé</b>, et <b>Une photo claire de ton
+                ancienne carte de cantine</b>
 
-    </br>
-    </br>
+            </br>
+            </br>
 
-    <b>4)</b> Nous vous répondrons dans les plus brefs délais avec les informations complémentaires.
+            <b>4)</b> Nous vous répondrons dans les plus brefs délais avec les informations complémentaires.
 
-</br>
-</br>
+            </br>
+            </br>
 
-<b>5)</b> La <b>livraison</b> <b>et le paiement</b> se feront au <b>Collège aux <a href="https://maps.app.goo.gl/oTDpinabY2AsGuht9" target="_blank" style="color:#ffe70b">point de retrait</a></b>.
-                    </p>
-                    <script>
-  let currentScroll = window.scrollY;
-  let targetScroll = currentScroll;
-  let isScrolling = false;
+            <b>5)</b> La <b>livraison</b> <b>et le paiement</b> se feront au <b>Collège aux <a
+                    href="https://maps.app.goo.gl/oTDpinabY2AsGuht9" target="_blank" style="color:#ffe70b">point de
+                    retrait</a></b>.
+        </p>
+    </div>
+    <script>
+        let currentScroll = window.scrollY;
+        let targetScroll = currentScroll;
+        let isScrolling = false;
 
-  window.addEventListener('wheel', (e) => {
-    targetScroll += e.deltaY;
-    if (!isScrolling) {
-      requestAnimationFrame(smoothScroll);
-      isScrolling = true;
-    }
-  }, { passive: false });
+        window.addEventListener('wheel', (e) => {
+            targetScroll += e.deltaY;
+            if (!isScrolling) {
+                requestAnimationFrame(smoothScroll);
+                isScrolling = true;
+            }
+        }, { passive: false });
 
-  function smoothScroll() {
-    currentScroll += (targetScroll - currentScroll) * 0.1;
-    window.scrollTo(0, currentScroll);
-    if (Math.abs(targetScroll - currentScroll) > 0.5) {
-      requestAnimationFrame(smoothScroll);
-    } else {
-      isScrolling = false;
-    }
-  }
-</script>
-        </body>
+        function smoothScroll() {
+            currentScroll += (targetScroll - currentScroll) * 0.1;
+            window.scrollTo(0, currentScroll);
+            if (Math.abs(targetScroll - currentScroll) > 0.5) {
+                requestAnimationFrame(smoothScroll);
+            } else {
+                isScrolling = false;
+            }
+        }
+    </script>
+</body>
+
 </html>
