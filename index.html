@@ -83,7 +83,24 @@
             background-color: rgba(128, 128, 128, 0.39);
             color: black;
         }
+        #test{
+            display: none;
+            color: black;
+            background-color: lightcoral;
+            border: 2px solid red;
+            padding: 10px;
+            margin-bottom: 20px;
+            p{
+                font-size: 18px;
+                margin: 0px;
+                padding: 0px;
+            }
+        }
         @media (max-width: 600px) {
+            #test{
+                display: block;
+            }
+
             #b1, #b2, #b3, #b4 {
                 width: 100%;
                 margin-bottom: 10px;
@@ -126,6 +143,11 @@
 </head>
 
 <body style="margin-left: 20px; margin-right: 20px;">
+    <div id="test">
+        <p>
+            Certaine fonctionalitée risque de ne pas fonctionner, veuillez vous rediriger sur cette page avec un pplus grand ecran...
+        </p>
+    </div>
 
     <a href="cartes.html"><button class="degrade2" ; id="b3" ,
             style="height: 50px; background-color: #D4AF37; color: rgb(10, 35, 159); font-size: 20px;">
