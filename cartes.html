@@ -2,6 +2,7 @@
 <head>
 <title>Cartes ScanUp</title>
 <link rel="icon" type="image/x-icon" href="favicon.ico">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
     button{
             height: 35px;
@@ -32,15 +33,16 @@
                 box-shadow: 6px 6px 10px;
                 transform: translateX(-5px) translateY(-5px);
             }
-            img{
+            img:not(#imgcarte){
               width: 13%;
             }</style>
             <style>
           
             @media (max-width: 600px) {
-              img{
-                height: 900px;
+              img:not(#imgcarte){
+                height: 100px;
                 width: unset;
+                border-radius: 15px !important;
               }
             }
 </style>
@@ -72,7 +74,7 @@
             </p>
             
 
-                    <div style="display: flex; justify-content: center;"><img src=""cartepro.png width="40%"; height="40%";>
+                    <div style="display: flex; justify-content: center;"><img src=""cartepro.png width="40%"; height="40%"; id="imgcarte">
                       <div>  
                       <h1 style=" margin-left: 35px; color: white;">
                             La carte futuriste.
