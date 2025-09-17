@@ -35,8 +35,17 @@
             }
             img:not(#imgcarte){
               width: 13%;
-            }</style>
-            <style>
+            }
+            #imgcarte{
+              width: 40%;
+              height: 40%;
+            }
+            .btn2{
+                display: block;
+              }
+              .btn3{
+                display: none;
+              }
           
             @media (max-width: 600px) {
               img:not(#imgcarte){
@@ -44,11 +53,28 @@
                 width: unset;
                 border-radius: 15px !important;
               }
+              .btn{
+                margin-bottom: 20px;
+              }
+              #imgcarte{
+                width: 60%;
+                height: 60%;
+                margin-right: 3px;
+              }
+              button:not(btn){
+                width: 100%;
+              }
+              .btn2{
+                display: none;
+              }
+              .btn3{
+                display: block;
+              }
             }
 </style>
     </head>
     <body style="background-color: #3b3112; margin-left: 20px; margin-right: 20px;">
-        <a href="index.html"><button class="degrade2" style="width: 80px; height: 40px">Acceuil</button></a>
+        <a href="index.html"><button class="degrade2 btn" style="width: 80px; height: 40px">Acceuil</button></a>
         <br>
 
         <div style="text-align: center; overflow-x: scroll; display: flex">
@@ -74,7 +100,7 @@
             </p>
             
 
-                    <div style="display: flex; justify-content: center;"><img src=""cartepro.png width="40%"; height="40%"; id="imgcarte">
+                    <div style="display: flex; justify-content: center;"><img src="cartepro.png" id="imgcarte">
                       <div>  
                       <h1 style=" margin-left: 35px; color: white;">
                             La carte futuriste.
@@ -86,14 +112,18 @@
                         </p>
                         <img src="tick.png" height="40px" class="tick" style="margin-left: 5px; display: none">
                         </div>
-                        <a href="choixcarte.html"><button class="degrade2" style="margin-left: 30px";>
+                        
+<a href="choixcarte.html"><button class="degrade2 btn2" style="margin-left: 35px">
                           Acheter
                         </button>
                         </a>
-
                         </div>
                         
                 </div>
+                <a href="choixcarte.html"><button class="degrade2 btn3">
+                          Acheter
+                        </button>
+                        </a>
                 <br/>
     <hr style="color: #D4AF37" />
 
@@ -101,29 +131,7 @@
         Mis à jour le <span style="color: rgb(212, 175, 55)">27/07/25</span>
     </p>
                 
-                <script>
-  let currentScroll = window.scrollY;
-  let targetScroll = currentScroll;
-  let isScrolling = false;
-
-  window.addEventListener('wheel', (e) => {
-    targetScroll += e.deltaY;
-    if (!isScrolling) {
-      requestAnimationFrame(smoothScroll);
-      isScrolling = true;
-    }
-  }, { passive: false });
-
-  function smoothScroll() {
-    currentScroll += (targetScroll - currentScroll) * 0.1;
-    window.scrollTo(0, currentScroll);
-    if (Math.abs(targetScroll - currentScroll) > 0.5) {
-      requestAnimationFrame(smoothScroll);
-    } else {
-      isScrolling = false;
-    }
-  }
-</script>
+                
             </body>
                 
 </html>
