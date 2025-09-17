@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>cartes ScanUp</title>
+<title>Cartes ScanUp</title>
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <style>
     button{
@@ -14,7 +14,7 @@
                 cursor: pointer;
         }
         .degrade2{
-                background: linear-gradient(to left, #e2a026, #d4af37)
+                background: linear-gradient(to left, #e2a026, #d4af37);
             }
             img:not(.tick){
                 position: relative;
@@ -24,7 +24,7 @@
                 transform: translateX(0px) translateY(0px);
             }
             button:hover{
-                 background: linear-gradient(to left, rgb(212, 175, 55), rgb(241, 171, 50))
+                 background: linear-gradient(to left, rgb(212, 175, 55), rgb(241, 171, 50));
             }
             img:hover:not(.tick){
                 border-radius: 20px;
@@ -32,19 +32,35 @@
                 box-shadow: 6px 6px 10px;
                 transform: translateX(-5px) translateY(-5px);
             }
+            img{
+              width: 13%;
+            }</style>
+            <style>
+          
+            @media (max-width: 600px) {
+              img{
+                height: 900px;
+                width: unset;
+              }
+            }
 </style>
     </head>
     <body style="background-color: #3b3112; margin-left: 20px; margin-right: 20px;">
-        <a href="index.html"><button class="degrade2" style="width: 70px; height: 40px">Acceuil</button></a>
+        <a href="index.html"><button class="degrade2" style="width: 80px; height: 40px">Acceuil</button></a>
         <br>
-        <div style="text-align: center; overflow-x: scroll;">
-          <img src="test.jpg" width="13%">
-          <img src="test.jpg" width="13%">
-          <img src="test.jpg" width="13%">
-          <img src="test.jpg" width="13%">
-          <img src="test.jpg" width="13%">
-          <img src="test.jpg" width="13%">
-          <img src="test.jpg" width="13%">
+
+        <div style="text-align: center; overflow-x: scroll; display: flex">
+          <img src="test.jpg">
+          <img src="test.jpg">
+          <img src="test.jpg">
+          <img src="test.jpg">
+          <img src="test.jpg">
+          <img src="test.jpg">
+          <img src="test.jpg">
+
+          <img src="test.jpg">
+          <img src="test.jpg">
+          <img src="test.jpg">
         </div>
        <h2 style="color: rgb(255, 228, 74); text-align: center">
        Besoin d'une carte ? 
