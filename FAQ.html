@@ -1,6 +1,8 @@
 <html>
 <head>
 <title>FAQ ScanUp</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
 <style>
 h1{
     font-size: 70px;
@@ -18,40 +20,111 @@ button{
         .degrade2{
                 background: linear-gradient(to left, #e2a026, #d4af37)
             }
+            summary{
+                font-size: 22px;
+                font-weight: bold;
+
+                width: 700px;
+                height: 45px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            details{
+                border-radius: 10px;
+                padding: 20px;
+                max-width: 700px;
+                background-color: rgb(46, 40, 22);
+                margin-bottom: 20px;
+                transition: 0.2s;
+            }
+            details summary{
+                cursor: pointer;
+            }
+            p{
+                font-size: 20px;
+            }
+            *{
+                font-family: sans-serif;
+            }
+            summary:hover{
+                text-decoration: underline;
+            }
+            details:hover{
+                box-shadow: 6px 6px 6px black;
+            }
+            
+            @media (max-width: 600px) {
+                details{
+                    max-width: 80vw;
+                }
+                summary{
+                    width: 80vw;
+                }
+                
+            }
+            
+            
 </style>
     </head>
 
     <body style="background-color: hsl(45, 54%, 15%);">
-        <a href="index.html"><button class="degrade2" style="width: 70px; height: 40px">Acceuil</button></a>
+        <a href="index.html"><button class="degrade2 btn" style="width: 80px; height: 40px">Acceuil</button></a>
         <h1 style="color: white; text-align: center;">
             FAQ    
         </h1> 
-<h2 style="color: rgb(255, 228, 74); text-align: center">Est-ce que nos produits sont résistants et durables ?
-</h2>
 
-<p style="color: rgb(255, 255, 255); text-align: center">Nos produits conviennent parfaitement aux personnes qui voudraient un produit de ce genre. Résistants, pratiques, solides, durables, pas chers !
+        
+
+        <div style="display: flex; justify-content: center">
+        <details>
+<summary style="color: rgb(255, 228, 74); text-align: center">Est-ce que nos produits sont résistants et durables ?
+            </summary>
+            
+<p style="color: rgb(255, 255, 255); text-align: center">Nos produits sont conçus pour durer. Ils sont solides, fiables et faits pour résister à un usage quotidien. En choisissant ScanUp, tu gagnes un accessoire pratique, robuste et stylé, pensé pour t’accompagner longtemps.
 </p>
+        </details>
+        </div>
 
-<h2 style="color: rgb(255, 228, 74); text-align: center">Est-ce que je peux me faire rembourser si mon produit rencontre un problème ?
-</h2>
+        <div style="display: flex; justify-content: center">
+        <details>
+<summary style="color: rgb(255, 228, 74); text-align: center">Est-ce que je peux me faire rembourser si mon produit rencontre un problème ?
+</summary>
 
-<p style="color: rgb(255, 255, 255); text-align: center">Bien sûr ! Avant 4 semaines après la livraison, si le produit dysfonctionne, il sera entièrement remboursé !
+<p style="color: rgb(255, 255, 255); text-align: center">Bien sûr ! Tu as 4 semaines après la livraison pour tester ton produit. S’il présente un défaut, il te sera intégralement remboursé, sans complication ni frais cachés. Avec nous, tu commandes l’esprit tranquille.
 </p>
+</details>
+        </div>
 
 
-<h2 style="color: rgb(255, 228, 74); text-align: center">Est-ce que nos produits fonctionnent réellement ?
-</h2>
+        <div style="display: flex; justify-content: center">
+        <details>
+<summary style="color: rgb(255, 228, 74); text-align: center">Est-ce que nos produits fonctionnent réellement ?
+</summary>
 
-<p style="color: rgb(255, 255, 255); text-align: center">Évidemment qu'ils fonctionnent ! Grâce à une technologie de précision, des vingtaines de tests et beaucoup de patience, nos produits prennent enfin vie !
+<p style="color: rgb(255, 255, 255); text-align: center">Évidemment ! Chaque produit est testé et validé grâce à une technologie précise et des dizaines de vérifications. Tu peux avoir confiance : nos accessoires ne sont pas des gadgets, mais de vraies solutions pratiques, prêtes à l’emploi
 </p>
+    </details>
+    </div>
 
 
-<h2 style="color: rgb(255, 228, 74); text-align: center">Est-ce que moi aussi je peux créer un site comme celui-là à mon âge ?
-</h2>
+    <div style="display: flex; justify-content: center">
+        <details>
+<summary style="color: rgb(255, 228, 74); text-align: center">Est-ce que moi aussi je peux créer un site comme celui-là à mon âge ?
+</summary>
 
-<p style="color: rgb(255, 255, 255); text-align: center">Bien sûr ! Grâce à une école de programmation en ligne, tu peux apprendre à coder avec plusieurs langages de programmation très facilement. C'est simple, efficace et cool. (Si ça t'intéresse, envoie un e-mail à "scanup.cantine@gmail.com
-" : tu recevras un lien d'une très bonne école de programmation ainsi que des réponses à tes questions.)
+<p style="color: rgb(255, 255, 255); text-align: center">Bien sûr ! Grâce aux écoles de programmation en ligne, tu peux apprendre à coder facilement, même en partant de zéro. HTML, CSS, JavaScript… tout est accessible avec les bons outils. C’est simple, efficace et motivant. (Si ça t’intéresse, envoie un e-mail à scanup.cantine@gmail.com
+ : tu recevras un lien vers une excellente école de programmation ainsi que des réponses à toutes tes questions.)
 </p>
+    </details>
+    </div>
+
+
+<hr style="color: #D4AF37" />
+
+    <p style="text-align: center; color: white;">
+        Mis à jour le <span style="color: rgb(212, 175, 55)">17/09/25</span>
+    </p>
 
         </body>
 </html>
