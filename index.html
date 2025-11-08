@@ -186,6 +186,28 @@
                 height: 300px;
             }
 
+            .slide-left {
+  opacity: 0;
+  transform: translateX(-150px);
+  transition: all 0.8s ease-out;
+}
+.slide-left.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Arrive depuis la droite */
+.slide-right {
+  opacity: 0;
+  transform: translateX(150px);
+  transition: all 0.8s ease-out;
+}
+.slide-right.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
         @media (max-width: 600px) {
             .cool-div{
                 text-align: center;
@@ -334,7 +356,7 @@
 
 
     <div class="cool-div">
-        <img id="img2" class="format" src="cartenew1.png">
+        <img id="img2" class="format slide-left" alt="Image" src="cartenew1.png">
         <p style="color: white;" class="p">
             Posséder une carte, c’est faire un pas vers l’innovation, le style et la responsabilité.
 
@@ -357,7 +379,7 @@
             <br/>
         </p>
         
-        <img class="format" src="porte-clefprovisoir.png">
+        <img class="format slide-right" alt="Image" src="porte-clefprovisoir.png">
         
     </div>
 
@@ -376,7 +398,7 @@
     </div>
 
     <div class="cool-div">
-        <img class="format" src="bracelet.png">
+        <img class="format slide-left" alt="Image" src="bracelet.png">
         <br />
         <p style="color: white; margin: 10px;" class="par3">
             Perdre sa carte, manger en dernier, se faire coller, c'est du passé avec un accessoire qui ne t'oublie jamais et qui évite des problèmes !
@@ -429,6 +451,17 @@
 
 
     <script>
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('show');
+    }
+  });
+});
+
+document.querySelectorAll('.slide-left, .slide-right').forEach(el => observer.observe(el));
+
+
         let currentScroll = window.scrollY;
         let targetScroll = currentScroll;
         let isScrolling = false;

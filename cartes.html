@@ -1,9 +1,33 @@
+<!DOCTYPE html>
 <html>
 <head>
 <title>Cartes ScanUp</title>
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+
+  .slide-left {
+  opacity: 0;
+  transform: translateX(-150px);
+  transition: all 0.8s ease-out;
+}
+
+/* Depuis la droite */
+.slide-right {
+  opacity: 0;
+  transform: translateX(150px);
+  transition: all 0.8s ease-out;
+}
+
+/* Apparition à l'écran */
+.slide-left.show,
+.slide-right.show {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+
+
     button{
             height: 35px;
             width: 90px;
@@ -112,7 +136,7 @@
           </br>
             
 
-                    <div style="display: flex; justify-content: center;"><img src="cartenew2.png" id="imgcarte">
+                    <div style="display: flex; justify-content: center;"><img src="cartenew2.png" id="imgcarte" alt="Image" class="slide-left">
                       <div>  
                       <h2 style=" margin-left: 35px;  color: white;">
                             La carte futuriste.
@@ -145,6 +169,19 @@
     </p>
                 
                 
-            </body>
-                
+            
+            <script>
+              // Active les animations quand les éléments apparaissent à l'écran
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      }
+    });
+  });
+
+  // Sélectionne toutes les images avec la classe slide-left ou slide-right
+  document.querySelectorAll('.slide-left, .slide-right').forEach(el => observer.observe(el));
+            </script>
+                </body>
 </html>
