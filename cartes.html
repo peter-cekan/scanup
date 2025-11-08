@@ -5,29 +5,6 @@
 <link rel="icon" type="image/x-icon" href="favicon.ico">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-
-  .slide-left {
-  opacity: 0;
-  transform: translateX(-150px);
-  transition: all 0.8s ease-out;
-}
-
-/* Depuis la droite */
-.slide-right {
-  opacity: 0;
-  transform: translateX(150px);
-  transition: all 0.8s ease-out;
-}
-
-/* Apparition à l'écran */
-.slide-left.show,
-.slide-right.show {
-  opacity: 1;
-  transform: translateX(0);
-}
-
-
-
     button{
             height: 35px;
             width: 90px;
@@ -74,6 +51,28 @@
                 display: none;
               }
           
+              /* Animation depuis la gauche */
+.slide-left {
+  opacity: 0;
+  transform: translateX(-100vw) !important;  /* ← sort totalement de l’écran à gauche */
+  transition: all 1s ease-out;
+}
+
+/* Animation depuis la droite */
+.slide-right {
+  opacity: 0;
+  transform: translateX(100vw) !important;   /* ← sort totalement de l’écran à droite */
+  transition: all 1s ease-out;
+}
+
+/* Quand visible */
+.slide-left.show,
+.slide-right.show {
+  opacity: 1;
+  transform: translateX(0) !important;
+}
+
+
             @media (max-width: 600px) {
               img:not(#imgcarte){
                 height: 100px;
@@ -136,7 +135,9 @@
           </br>
             
 
-                    <div style="display: flex; justify-content: center;"><img src="cartenew2.png" id="imgcarte" alt="Image" class="slide-left">
+                    <div style="display: flex; justify-content: center;"><img src="cartenew2.png" id="imgcarte" alt="Image" 
+                      class="slide-left">
+
                       <div>  
                       <h2 style=" margin-left: 35px;  color: white;">
                             La carte futuriste.
@@ -182,6 +183,17 @@
 
   // Sélectionne toutes les images avec la classe slide-left ou slide-right
   document.querySelectorAll('.slide-left, .slide-right').forEach(el => observer.observe(el));
-            </script>
+           
+           // Pour forcer l'animation si l'élément est déjà visible au chargement
+window.addEventListener('load', () => {
+  document.querySelectorAll('.slide-left, .slide-right').forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight && rect.bottom >= 0) {
+      el.classList.add('show');
+    }
+  });
+});
+
+</script>
                 </body>
 </html>
