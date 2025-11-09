@@ -6,7 +6,7 @@
     <title>
         ScanUp
     </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <style>
         #test {
@@ -212,63 +212,74 @@
 
 
 
-/* Popup container */
-  #scanup-legal-popup {
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    transform: translateY(-110%);
-    transition: transform 350ms ease;
-    z-index: 9999;
-    display: flex;
-    justify-content: center;
-    pointer-events: none; /* évite d'empêcher clics quand caché */
-  }
+/* --- POPUP SCANUP --- */
+#scanup-legal-popup {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  transform: translateY(-110%);
+  transition: transform 350ms ease;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+  pointer-events: none;
+}
 
-  #scanup-legal-popup.show {
-    transform: translateY(0);
-    pointer-events: auto;
-  }
+#scanup-legal-popup.show {
+  transform: translateY(0);
+  pointer-events: auto;
+}
 
-  /* Card */
-  #scanup-legal-card {
-    width: min(1100px, calc(100% - 24px));
-    background: linear-gradient(180deg, rgba(20,18,12,0.98), rgba(28,24,16,0.98));
-    color: #fff;
-    border: 2px solid rgba(212,175,55,0.95);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
-    border-radius: 8px;
-    padding: 14px 16px;
-    display: flex;
-    gap: 12px;
-    align-items: flex-start;
-  }
+#scanup-legal-card {
+  width: min(1000px, 95%);
+  background: linear-gradient(180deg, rgba(20,18,12,0.97), rgba(28,24,16,0.98));
+  color: #fff;
+  border: 2px solid rgba(212,175,55,0.95);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+  border-radius: 10px;
+  padding: 14px 16px;
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: flex-start;
+}
 
-  /* Text area */
-  #scanup-legal-text {
-    font-size: 15px;
-    line-height: 1.35;
-    color: #f6f3ef;
-    flex: 1;
-    max-height: 220px;
-    overflow: auto;
-    padding-right: 8px;
-  }
-  #scanup-legal-text strong { color: #D4AF37; }
+#scanup-legal-text {
+  font-size: 15px;
+  line-height: 1.45;
+  color: #f6f3ef;
+  flex: 1;
+  max-height: 250px;
+  overflow-y: auto;
+  padding-right: 8px;
+}
 
-  /* Close button */
-  #scanup-legal-close {
-    background: transparent;
-    border: none;
-    color: #d4af37;
-    font-size: 22px;
-    line-height: 1;
-    cursor: pointer;
-    padding: 6px;
-    border-radius: 6px;
-  }
-  #scanup-legal-close:focus { outline: 2px solid rgba(212,175,55,0.55); outline-offset: 2px; }
+#scanup-legal-text strong { color: #D4AF37; }
+
+#scanup-legal-close {
+  background: transparent;
+  border: none;
+  color: #d4af37;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  transition: color 0.2s;
+}
+
+#scanup-legal-close:hover {
+  color: #f0d86f;
+}
+
+#scanup-legal-close:focus {
+  outline: 2px solid rgba(212,175,55,0.55);
+  outline-offset: 2px;
+}
+
+/* --- Version mobile --- */
 
  
   
@@ -285,31 +296,47 @@
 
 
             #scanup-legal-card {
-    width: calc(100% - 10px);
-    margin: 5px;
     flex-direction: column;
-    align-items: flex-start;
+    width: calc(100% - 16px);
+    margin: 0 auto;
     padding: 10px 12px;
     font-size: 14px;
+    border-radius: 8px;
   }
 
   #scanup-legal-text {
     font-size: 13.5px;
+    line-height: 1.4;
+    max-height: 180px;
+    overflow-y: auto;
+  }
+
+  #scanup-legal-close {
+    align-self: flex-end;
+    font-size: 26px;
+    padding: 4px;
+  }
+
+#scanup-legal-card {
+    width: 90%;
+    flex-direction: column;
+    text-align: left;
+    padding: 12px 14px;
+  }
+
+  #scanup-legal-text {
+    font-size: 14px;
     max-height: 180px;
     line-height: 1.4;
   }
 
   #scanup-legal-close {
     align-self: flex-end;
+    font-size: 26px;
     margin-top: 4px;
-    font-size: 22px;
-    padding: 4px;
   }
 
 
-  #scanup-legal-card { padding: 12px; border-radius: 6px; width: calc(100% - 16px); }
-    #scanup-legal-text { font-size: 14px; max-height: 160px; }
-    #scanup-legal-close { font-size: 20px; }
 
 
             .cool-div{
@@ -615,7 +642,7 @@ document.querySelectorAll('.slide-left, .slide-right').forEach(el => observer.ob
 
 
 
-        
+
 
 
         (function(){
