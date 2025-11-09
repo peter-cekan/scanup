@@ -270,16 +270,21 @@
   }
   #scanup-legal-close:focus { outline: 2px solid rgba(212,175,55,0.55); outline-offset: 2px; }
 
-  /* Small screens */
-  @media (max-width: 600px) {
-    #scanup-legal-card { padding: 12px; border-radius: 6px; width: calc(100% - 16px); }
-    #scanup-legal-text { font-size: 14px; max-height: 160px; }
-    #scanup-legal-close { font-size: 20px; }
-  }
+ 
+  
 
-  /* --- Version téléphone très petite (moins de 480px) --- */
-@media (max-width: 480px) {
-  #scanup-legal-card {
+  
+
+
+
+
+
+
+
+        @media (max-width: 600px) {
+
+
+            #scanup-legal-card {
     width: calc(100% - 10px);
     margin: 5px;
     flex-direction: column;
@@ -300,15 +305,13 @@
     font-size: 22px;
     padding: 4px;
   }
-}
 
 
+  #scanup-legal-card { padding: 12px; border-radius: 6px; width: calc(100% - 16px); }
+    #scanup-legal-text { font-size: 14px; max-height: 160px; }
+    #scanup-legal-close { font-size: 20px; }
 
 
-
-
-
-        @media (max-width: 600px) {
             .cool-div{
                 text-align: center;
             }
@@ -612,57 +615,63 @@ document.querySelectorAll('.slide-left, .slide-right').forEach(el => observer.ob
 
 
 
-
+        
 
 
         (function(){
-    const popup = document.getElementById('scanup-legal-popup');
-    const closeBtn = document.getElementById('scanup-legal-close');
-    const storageKey = 'scanupLegalClosedV1'; // change la version si tu veux repasser l'alerte
+  const popup = document.getElementById('scanup-legal-popup');
+  const closeBtn = document.getElementById('scanup-legal-close');
+  const storageKey = 'scanupLegalClosedSession';
 
-    // Ne pas afficher si déjà fermé
-    function isClosed() {
-      try { return localStorage.getItem(storageKey) === '1'; }
-      catch(e){ return false; }
-    }
+  // Vérifie si le popup a déjà été fermé (pendant la session actuelle)
+  function isClosed() {
+    try { return sessionStorage.getItem(storageKey) === '1'; }
+    catch(e){ return false; }
+  }
 
-    // Affiche le popup après un petit délai (pour pas gêner le chargement)
-    function showPopup() {
-      popup.classList.add('show');
-      popup.setAttribute('aria-hidden', 'false');
-      // focus utile pour accessibilité
+  // Ferme le popup et garde l’état fermé jusqu’à fermeture de l’onglet
+  function closePopup() {
+    popup.classList.remove('show');
+    popup.setAttribute('aria-hidden', 'true');
+    try { sessionStorage.setItem(storageKey, '1'); } catch(e){}
+  }
+
+  // Affiche le popup avec un petit délai pour ne pas gêner le chargement
+  function showPopup() {
+    popup.classList.add('show');
+    popup.setAttribute('aria-hidden', 'false');
+    closeBtn.focus();
+  }
+
+  // Si le popup n’a pas encore été fermé → affichage automatique après 0.6s
+  if (!isClosed()) {
+    window.setTimeout(showPopup, 600);
+  }
+
+  // Fermer sur clic ✕
+  closeBtn.addEventListener('click', closePopup);
+
+  // Fermer sur touche Échap
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape') closePopup();
+  });
+
+  // Accessibilité : empêche le focus de sortir du popup quand ouvert
+  document.addEventListener('focus', function(e){
+    if (!popup.classList.contains('show')) return;
+    if (!popup.contains(e.target)) {
+      e.stopPropagation();
       closeBtn.focus();
     }
+  }, true);
+})();
 
-    // Cacher et mémoriser la fermeture
-    function closePopup() {
-      popup.classList.remove('show');
-      popup.setAttribute('aria-hidden', 'true');
-      try { localStorage.setItem(storageKey, '1'); } catch(e){}
-    }
 
-    // ouverture auto si pas déjà fermé
-    if (!isClosed()) {
-      // petit délai pour ne pas gêner rendu initial
-      window.setTimeout(showPopup, 600);
-    }
 
-    // évènements
-    closeBtn.addEventListener('click', closePopup);
-    // fermer avec Echap
-    document.addEventListener('keydown', function(e){
-      if (e.key === 'Escape') closePopup();
-    });
 
-    // empecher le focus de sortir hors du dialogue quand ouvert (trap focus simple)
-    document.addEventListener('focus', function(e){
-      if (!popup.classList.contains('show')) return;
-      if (!popup.contains(e.target)) {
-        e.stopPropagation();
-        closeBtn.focus();
-      }
-    }, true);
-  })();
+
+        
+
     </script>
 
 </body>
