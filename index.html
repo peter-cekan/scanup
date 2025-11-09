@@ -621,28 +621,7 @@ const observer = new IntersectionObserver(entries => {
 
 document.querySelectorAll('.slide-left, .slide-right').forEach(el => observer.observe(el));
 
-        let currentScroll = window.scrollY;
-        let targetScroll = currentScroll;
-        let isScrolling = false;
-
-        window.addEventListener('wheel', (e) => {
-            targetScroll += e.deltaY;
-            if (!isScrolling) {
-                requestAnimationFrame(smoothScroll);
-                isScrolling = true;
-            }
-        }, { passive: false });
-
-        function smoothScroll() {
-            currentScroll += (targetScroll - currentScroll) * 0.1;
-            window.scrollTo(0, currentScroll);
-            if (Math.abs(targetScroll - currentScroll) > 0.5) {
-                requestAnimationFrame(smoothScroll);
-            } else {
-                isScrolling = false;
-            }
-        }
-
+        
 
 
 
