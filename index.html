@@ -206,6 +206,83 @@
 }
 
 
+
+
+
+
+
+
+/* Popup container */
+  #scanup-legal-popup {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    transform: translateY(-110%);
+    transition: transform 350ms ease;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    pointer-events: none; /* évite d'empêcher clics quand caché */
+  }
+
+  #scanup-legal-popup.show {
+    transform: translateY(0);
+    pointer-events: auto;
+  }
+
+  /* Card */
+  #scanup-legal-card {
+    width: min(1100px, calc(100% - 24px));
+    background: linear-gradient(180deg, rgba(20,18,12,0.98), rgba(28,24,16,0.98));
+    color: #fff;
+    border: 2px solid rgba(212,175,55,0.95);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+    border-radius: 8px;
+    padding: 14px 16px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+  }
+
+  /* Text area */
+  #scanup-legal-text {
+    font-size: 15px;
+    line-height: 1.35;
+    color: #f6f3ef;
+    flex: 1;
+    max-height: 220px;
+    overflow: auto;
+    padding-right: 8px;
+  }
+  #scanup-legal-text strong { color: #D4AF37; }
+
+  /* Close button */
+  #scanup-legal-close {
+    background: transparent;
+    border: none;
+    color: #d4af37;
+    font-size: 22px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 6px;
+  }
+  #scanup-legal-close:focus { outline: 2px solid rgba(212,175,55,0.55); outline-offset: 2px; }
+
+  /* Small screens */
+  @media (max-width: 640px) {
+    #scanup-legal-card { padding: 12px; border-radius: 6px; width: calc(100% - 16px); }
+    #scanup-legal-text { font-size: 14px; max-height: 160px; }
+    #scanup-legal-close { font-size: 20px; }
+  }
+
+
+
+
+
+
+
         @media (max-width: 600px) {
             .cool-div{
                 text-align: center;
@@ -281,6 +358,29 @@
 </head>
 
 <body style="margin-left: 20px; margin-right: 20px;">
+
+
+    <div id="scanup-legal-popup" role="dialog" aria-live="polite" aria-label="Information légale ScanUp" aria-hidden="true">
+  <div id="scanup-legal-card" role="document">
+    <div id="scanup-legal-text">
+      <div style="font-weight:700; margin-bottom:6px;">© 2025 ScanUp — Tous droits réservés.</div>
+      <div>
+        La simple reproduction d’un code-barres ou l’impression d’un objet semblable à un produit ScanUp constitue une contrefaçon potentielle et peut entraîner des poursuites civiles et/ou pénales (demande de retrait, destruction des exemplaires contrefaits, dommages-intérêts, amendes).<br><br>
+        Pour toute demande d’autorisation, contactez : <a href="mailto:contact@scanup.example" style="color:#D4AF37; text-decoration:underline;">scanup.cantine@gmail.com</a>
+      </div>
+    </div>
+
+    <div style="display:flex; flex-direction:column; align-items:center;">
+      <button id="scanup-legal-close" aria-label="Fermer l'alerte légale" title="Fermer">✕</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
     <div id="test">
         <p>
             Certaines fonctionnalités peuvent ne pas fonctionner. 
@@ -481,6 +581,63 @@ document.querySelectorAll('.slide-left, .slide-right').forEach(el => observer.ob
                 isScrolling = false;
             }
         }
+
+
+
+
+
+
+
+
+
+        (function(){
+    const popup = document.getElementById('scanup-legal-popup');
+    const closeBtn = document.getElementById('scanup-legal-close');
+    const storageKey = 'scanupLegalClosedV1'; // change la version si tu veux repasser l'alerte
+
+    // Ne pas afficher si déjà fermé
+    function isClosed() {
+      try { return localStorage.getItem(storageKey) === '1'; }
+      catch(e){ return false; }
+    }
+
+    // Affiche le popup après un petit délai (pour pas gêner le chargement)
+    function showPopup() {
+      popup.classList.add('show');
+      popup.setAttribute('aria-hidden', 'false');
+      // focus utile pour accessibilité
+      closeBtn.focus();
+    }
+
+    // Cacher et mémoriser la fermeture
+    function closePopup() {
+      popup.classList.remove('show');
+      popup.setAttribute('aria-hidden', 'true');
+      try { localStorage.setItem(storageKey, '1'); } catch(e){}
+    }
+
+    // ouverture auto si pas déjà fermé
+    if (!isClosed()) {
+      // petit délai pour ne pas gêner rendu initial
+      window.setTimeout(showPopup, 600);
+    }
+
+    // évènements
+    closeBtn.addEventListener('click', closePopup);
+    // fermer avec Echap
+    document.addEventListener('keydown', function(e){
+      if (e.key === 'Escape') closePopup();
+    });
+
+    // empecher le focus de sortir hors du dialogue quand ouvert (trap focus simple)
+    document.addEventListener('focus', function(e){
+      if (!popup.classList.contains('show')) return;
+      if (!popup.contains(e.target)) {
+        e.stopPropagation();
+        closeBtn.focus();
+      }
+    }, true);
+  })();
     </script>
 
 </body>
