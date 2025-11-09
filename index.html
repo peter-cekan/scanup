@@ -277,6 +277,31 @@
     #scanup-legal-close { font-size: 20px; }
   }
 
+  /* --- Version téléphone très petite (moins de 480px) --- */
+@media (max-width: 480px) {
+  #scanup-legal-card {
+    width: calc(100% - 10px);
+    margin: 5px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px 12px;
+    font-size: 14px;
+  }
+
+  #scanup-legal-text {
+    font-size: 13.5px;
+    max-height: 180px;
+    line-height: 1.4;
+  }
+
+  #scanup-legal-close {
+    align-self: flex-end;
+    margin-top: 4px;
+    font-size: 22px;
+    padding: 4px;
+  }
+}
+
 
 
 
